@@ -1,5 +1,4 @@
 import React from 'react'
-import propTypes from 'prop-types'
 
 import ImageHero from 'assets/images/img-hero.jpg'
 import ImageHero_ from 'assets/images/img-hero-frame.jpg'
