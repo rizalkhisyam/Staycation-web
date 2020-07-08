@@ -42,8 +42,6 @@ export default function Star({ className, value, height, width, spacing }) {
             <div className={['stars', className].join(" ")} style={{height: height}}>
                 {starPlaceholder}
                 {star}
-                <div style={{zIndex:5}}>{decimals}</div>
-                
             </div>
         </>
     )
