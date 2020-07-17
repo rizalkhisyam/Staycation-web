@@ -172,7 +172,7 @@ section {
             color: $white;
             padding: 20px;
             position: absolute;
-            top: 0; bottom: 0;
+            top: 0; bottom: 0; 
             width: 100%; transform: translateY(0);
             transition: .3s transform ease-in-out;
             display: flex;
@@ -182,7 +182,7 @@ section {
 
         &:hover{
             .meta-wrapper{
-                transform: translateY( -10 px);
+                transform: translateY(-10 px);
             }
 
             &::after {
@@ -199,4 +199,35 @@ section {
 .testimonial-hero, .testimonial-hero img{
     width: 365px; 
     height: 500px;
+}
+
+footer {
+    border-top: 1px solid $gray-200;
+    padding-top:50px ;
+
+    .brand-tagline {
+        color: $gray-500;
+        font-weight: 300;
+        margin-top: 8px;
+    }
+
+    .list-group-item{
+        padding: 0.3125rem 0;
+        border: 0;
+        a, span {
+            color: $gray-500;
+            font-weight: 300;
+        }
+        a {
+            @include hover-focus{
+                color: $gray-800;
+            }
+        }
+    }
+
+    .copyright {
+        margin: 50px 0;
+        font-weight: 300;
+        color: $gray-500;
+    }
 }
