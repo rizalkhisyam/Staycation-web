@@ -173,7 +173,8 @@ section {
             padding: 20px;
             position: absolute;
             top: 0; bottom: 0; 
-            width: 100%; transform: translateY(0);
+            width: 100%; 
+            transform: translateY(0);
             transition: .3s transform ease-in-out;
             display: flex;
             justify-content: flex-end;
@@ -182,7 +183,7 @@ section {
 
         &:hover{
             .meta-wrapper{
-                transform: translateY(-10 px);
+                transform: translateY(-10px);
             }
 
             &::after {
