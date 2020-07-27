@@ -1,5 +1,6 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom';
 
 import ImageHero from 'assets/images/img-hero.jpg'
 import ImageHero_ from 'assets/images/img-hero-frame.jpg'
@@ -21,9 +22,9 @@ export default function Hero(props) {
     }
 
     return (
-        <Fade bottom>
         <section className="container pt-4">
             <div className="row align-item-center">
+                <Fade left>
                 <div className="col-auto pr-5" style={{ width: 520 }}>
                     <h1 className="font-weight-bold line-height-1 mb-3">
                         Forget Busy Work, <br/>
@@ -62,6 +63,8 @@ export default function Hero(props) {
                         
                     </div>
                 </div>
+                </Fade>
+                <Zoom>
                 <div className="col-6 pl-5">
                     <div className="image-hero" style={{width: 520, height: 410}}>
                         <img src={ImageHero} alt="room with couches" className="img-fluid position-absolute" style={{margin: '-30px 0 0 -30px' , zIndex: 1}} />
@@ -69,8 +72,8 @@ export default function Hero(props) {
                         <img src={ImageHero_} alt="room with couches frame" className="img-fluid position-absolute" style={{margin: '0 -15px -15px 0'}} />
                     </div>
                 </div>
+                </Zoom>
             </div>
         </section>
-        </Fade>
     )
 }
