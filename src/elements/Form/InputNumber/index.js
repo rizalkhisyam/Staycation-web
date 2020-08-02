@@ -4,9 +4,9 @@ import propTypes from 'prop-types'
 
 import "./index.scss";
 
-export default function Number() {
+export default function Number(props) {
 
-    const { value, placeholder, min, max, name, prefix, suffix } = props;
+    const { value, placeholder, min, max, name, prefix, suffix, isSuffixPlural } = props;
 
     const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
     const onChange = e => {
@@ -24,7 +24,7 @@ export default function Number() {
                     value: +value
                 }
             });
-            setInputValue(`${prefix}${value}${suffix}`);
+            setInputValue(`${prefix}${value}${suffix}${isSuffixPlural && value > 1 ? "s" : ""}`);
         }
     };
 
@@ -56,7 +56,7 @@ export default function Number() {
                         -
                     </span> 
                 </div>
-            </div>
+            
             <input 
             className="form-control"
             min={min}
@@ -73,6 +73,7 @@ export default function Number() {
                     +
                 </span>
             </div>
+            </div>
         </div>
     )
 }
@@ -88,5 +89,6 @@ Number.propTypes = {
     value: propTypes.oneOfType([propTypes.string, propTypes.number]),
     onChange: propTypes.func,
     placeholder: propTypes.string,
-    outerClassName: propTypes.string
+    outerClassName: propTypes.string,
+    isSuffixPlural: propTypes.bool
 }
