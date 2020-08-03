@@ -49,7 +49,36 @@ export default function Date(props) {
     ${value.endDate ? " - " + formatDate(value.endDate) : ""}`;
 
     return (
-        <div>
+        <div ref={refDate} className={["input-date mb-3", props.outerClassName].join(" ")}>
+            <div className="input-group">
+                <div className="input-group-prepend bg-gray-900">
+                    <span className="input-group-text">
+                        <img src={iconCalender} alt="icon calender"></img>
+                    </span>
+                </div>
+
+                <input 
+                className="form-control" 
+                readOnly
+                type="text"
+                value={displayDate}
+                placeholder={placeholder}
+                onClick={() => setIsShowed(!isShowed)}>
+                </input>
+
+                {isShowed && (
+                    <div className="date-range-wrapper">
+                        <DateRange 
+                        editableDateInputs={true}
+                        onChange={datePickerChange}
+                        moveRangeOnFirstSelection={false}
+                        onRangeFocusChange={check}
+                        ranges={[value]}
+                        >
+                        </DateRange>
+                    </div>
+                )}
+            </div>
             
         </div>
     )
