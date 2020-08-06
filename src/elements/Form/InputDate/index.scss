@@ -1,9 +1,10 @@
-@import '../../../assets/scss/colorVariables'
+@import '../../../assets/scss/colorVariables';
 
 .input-date {
     .input-group {
         background-color: $white;
-        .input-date-text {
+        
+        .input-group-text {
             pointer-events: none;
             border: 0;
             cursor: pointer;

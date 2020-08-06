@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import propTypes from 'prop-types'
+import propTypes from 'prop-types';
 
 import {DateRange} from 'react-date-range';
 
@@ -7,12 +7,10 @@ import './index.scss';
 import 'react-date-range/dist/styles.css'; //from main css file in react-date-range
 import 'react-date-range/dist/theme/default.css';
 
-import formatDate from 'utils/formatDate';
-import iconCalender from 'assets/images/icons/ic_calender.svg';
-
+import formatDate from 'utils/FormatDate';
+import iconCalender from 'assets/images/icons/ic_calendar.svg';
 
 export default function Date(props) {
-
     const { value, placeholder, name } = props;
     const [ isShowed, setIsShowed ] = useState(false);
 
@@ -50,13 +48,14 @@ export default function Date(props) {
 
     return (
         <div ref={refDate} className={["input-date mb-3", props.outerClassName].join(" ")}>
+
             <div className="input-group">
                 <div className="input-group-prepend bg-gray-900">
                     <span className="input-group-text">
                         <img src={iconCalender} alt="icon calender"></img>
-                    </span>
+                    </span> 
                 </div>
-
+            
                 <input 
                 className="form-control" 
                 readOnly
@@ -78,6 +77,7 @@ export default function Date(props) {
                         </DateRange>
                     </div>
                 )}
+
             </div>
             
         </div>

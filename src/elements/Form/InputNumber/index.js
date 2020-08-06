@@ -57,22 +57,23 @@ export default function Number(props) {
                     </span> 
                 </div>
             
-            <input 
-            className="form-control"
-            min={min}
-            max={max}
-            name={name}
-            pattern="[0-9]*"
-            placeholder = {placeholder ? placeholder : "0"}
-            value = {String(InputValue)}
-            onChange = {onChange}
-            >
-            </input>
-            <div className="input-group-append">
-                <span className="input-group-text plus" onClick={plus}>
-                    +
-                </span>
-            </div>
+                <input 
+                className="form-control"
+                min={min}
+                max={max}
+                name={name}
+                pattern="[0-9]*"
+                placeholder = {placeholder ? placeholder : "0"}
+                value = {String(InputValue)}
+                onChange = {onChange}
+                >
+                </input>
+
+                <div className="input-group-append">
+                    <span className="input-group-text plus" onClick={plus}>
+                        +
+                    </span>
+                </div>
             </div>
         </div>
     )
