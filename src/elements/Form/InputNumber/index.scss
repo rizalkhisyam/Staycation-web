@@ -16,6 +16,7 @@
             display: flex;
             justify-content: center;
             user-select: none;
+            z-index: 10;
             &.minus{
                 background-color: $red;
             }
@@ -32,6 +33,8 @@
             background-color: $gray-100;
             padding: 0.575rem 1rem;
             text-align: center;
+            justify-content: center;
+            height: 45px;
         }
     }
 }

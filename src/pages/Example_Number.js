@@ -11,7 +11,7 @@ export default class Example extends Component {
         }
     };
 
-    handleCange = e => {
+    handleChange = e => {
         this.setState({ [e.target.name] : e.target.value });
     };
 
@@ -29,7 +29,7 @@ export default class Example extends Component {
                         value={this.state.value}
                         >
                         </InputDate>
-
+                        
                     </div>
                 </div>
             </div>

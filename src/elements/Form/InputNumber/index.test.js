@@ -7,7 +7,7 @@ class TestInput extends React.Component {
         value : ""
     };
 
-    handleCange = e => {
+    handleChange = e => {
         this.setState({ [e.target.name] : e.target.value });
     };
 
@@ -15,7 +15,7 @@ class TestInput extends React.Component {
         return (
             <InputNumber
             max={30}
-            onChange={this.handleCange}
+            onChange={this.handleChange}
             name="value"
             value={this.state.value}
             >
