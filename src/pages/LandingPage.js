@@ -11,6 +11,11 @@ import landingPage from 'json/landingPage.json'
 
 export default class LandingPage extends Component {
 
+    componentDidMount(){
+        window.title = "Staycation | Home";
+        window.scrollTo(0, 0);
+    }
+
     constructor(props){
         super(props);
         this.refMostPicked = React.createRef();

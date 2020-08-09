@@ -1,13 +1,15 @@
 import React from 'react'
-import propTypes from 'prop-types'
+import propTypes from 'prop-types';
+
 
 import Button from 'elements/Button'
 import './index.scss';
 
 export default function Breadcrumb(props) {
+
     return (
         <nav aria-label="breadcrumb">
-            <ol className={className.join(" ")}>
+            <ol className="breadcrumb">
             { props.data.map((item, index) => {
                     return (
                         <li 
@@ -27,9 +29,9 @@ export default function Breadcrumb(props) {
             </ol>
         </nav>
     )
-}
+};
 
 Breadcrumb.propTypes = {
     data: propTypes.array,
     className: propTypes.string
-}
+};
