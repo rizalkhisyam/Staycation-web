@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 
 import InputNumber from 'elements/Form/InputNumber';
 import InputDate from 'elements/Form/InputDate';
+import Button from 'elements/Button'
 
 export default class BookingForm extends Component {
     constructor(props){
@@ -67,7 +68,7 @@ export default class BookingForm extends Component {
         const { data } = this.state
         const { itemDetails, startBooking } = this.props
         return (
-            <div className="card-bordered" style={{padding:'60px 80px'}}>
+            <div className="card bordered" style={{padding:'60px 80px'}}>
                 <h4 className="mb-3">Start Booking</h4>
                 <h5 className="h2 text-teal mb-4">
                     ${itemDetails.price}{" "}
@@ -94,6 +95,27 @@ export default class BookingForm extends Component {
                 value={data.date}
                 >
                 </InputDate>
+
+                <h6 className="text-gray-500 font-weight-light" style={{ marginBottom: 90 }}>
+                    You will pay{" "}
+                    <span className="text-gray-900">
+                        ${itemDetails.price * data.duration} USD
+                    </span>{" "}
+                    per{" "}
+                    <span className="text-gray-900">
+                        {data.duration} {itemDetails.unit}
+                    </span>
+                </h6>
+
+                <Button
+                className="btn"
+                hasShadow
+                isPrimary
+                isBlock
+                onClick={startBooking}
+                >
+                    Continue to book
+                </Button>
             </div>
         )
     }
