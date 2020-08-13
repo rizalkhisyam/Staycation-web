@@ -5,6 +5,9 @@ import PageDetailTitle from 'parts/PageDetailTitle'
 import FeaturedImage from 'parts/FeaturedImage'
 import PageDetailDescription from 'parts/PageDetailDescription';
 import BookingForm from 'parts/BookingForm';
+import Category from 'parts/Categories';
+import Testimony from 'parts/Testimony';
+import Footer from 'parts/Footer';
 
 import ItemDetails from 'json/itemDetails.json';
 
@@ -41,6 +44,10 @@ export default class DetailsPage extends Component {
                     </div>
                 </div>
                 </section>
+
+                <Category data={ItemDetails.categories}></Category>
+                <Testimony data={ItemDetails.testimonial}></Testimony>
+                <Footer></Footer>
             </>
         )
     }

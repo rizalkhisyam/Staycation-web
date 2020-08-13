@@ -103,7 +103,7 @@ export default class BookingForm extends Component {
                     </span>{" "}
                     per{" "}
                     <span className="text-gray-900">
-                        {data.duration} {itemDetails.unit}
+                        {data.duration} {itemDetails.unit}{+data.duration > 1 ? "s":""}
                     </span>
                 </h6>
 

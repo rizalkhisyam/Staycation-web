@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from 'pages/LandingPage';
 import DetailsPage from 'pages/DetailsPage';
+import Checkout from 'pages/ChekoutPage';
 
 import ExDate from 'pages/Example_Number';
 import ExNumber from 'pages/Example_Date';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/date" component={ExDate}></Route>
         <Route path="/number" component={ExNumber}></Route>
         <Route path="/breadcrumb" component={ExBreadcrumb}></Route>
+        <Route path="/checkout" component={Checkout}></Route>
 
         {/* core */}
         <Route exact path="/" component={LandingPage}></Route>
