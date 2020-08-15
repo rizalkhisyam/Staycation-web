@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 import './index.scss';
 
@@ -13,8 +13,7 @@ export default function File(props) {
         prepend,
         append,
         outerClassName,
-        inputClassName,
-        errorResponse
+        inputClassName
     } = props;
 
     const refinputFile = useRef(null);
@@ -61,14 +60,14 @@ File.defaultProps = {
     placeholder: "Browse file here ..."
 }
 
-File.PropTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    onChange: PropTypes.func.isRequired,
-    prepend: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    append:  PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    accept: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
-    outerClassName: PropTypes.string,
-    inputClassName: PropTypes.string
+File.propTypes = {
+    name: propTypes.string.isRequired,
+    value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
+    onChange: propTypes.func.isRequired,
+    prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+    append:  propTypes.oneOfType([propTypes.number, propTypes.string]),
+    accept: propTypes.string.isRequired,
+    placeholder: propTypes.string,
+    outerClassName: propTypes.string,
+    inputClassName: propTypes.string
 };

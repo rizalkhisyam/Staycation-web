@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 import './index.scss';
 
@@ -19,30 +19,30 @@ export default function Text(props) {
 
     const [hasError, setHasError] = useState(null);
     let pattern = "";
-    if(type === 'email') pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(type === 'tel') pattern = "[0-9]*";
+    if(type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(type === "tel") pattern = "[0-9]*";
 
-    onChange = (event) => {
+    const onChange = (event) => {
         const target = {
             target: {
                 name: name,
                 value: event.target.value
-            }
+            },
         };
 
         if(type === "email"){
             if(!pattern.test(event.target.value)) setHasError(errorResponse);
             else{
-                setHasError("");   
+                setHasError(null);   
             }
         };
 
-        if(type === "tel"){
-            if(event.target.validity.valid) props.onChange(target);
-        }else {
+        if (type === "tel"){
+            if (event.target.validity.valid) props.onChange(target);
+        } else {
             props.onChange(target);
         }
-    }
+    };
 
     return (
         <div className={["input-text mb-3", outerClassName].join(" ")}>
@@ -62,7 +62,7 @@ export default function Text(props) {
                 name={name}
                 placeholder={placeholder}
                 value = {value}
-                onChange = {onChange}
+                onChange={onChange}
                 >
                 </input>
                 
@@ -91,14 +91,14 @@ Text.defaultProps = {
     errorResponse: "Please match the requested fromat."
 }
 
-Text.PropTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    onChange: PropTypes.func.isRequired,
-    prepend: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    append:  PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    type: PropTypes.string,
-    placeholder: PropTypes.string,
-    outerClassName: PropTypes.string,
-    inputClassName: PropTypes.string
+Text.propTypes = {
+    name: propTypes.string.isRequired,
+    value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
+    onChange: propTypes.func.isRequired,
+    prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+    append: propTypes.oneOfType([propTypes.number, propTypes.string]),
+    type: propTypes.string,
+    placeholder: propTypes.string,
+    outerClassName: propTypes.string,
+    inputClassName: propTypes.string,
 };

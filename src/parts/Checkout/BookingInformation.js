@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Fade from 'react-reveal/Fade'
 
 import InputText from 'elements/Form/InputText';
@@ -7,11 +6,11 @@ import InputText from 'elements/Form/InputText';
 export default function BookingInformation(props) {
 
     const { data, ItemDetails, checkout } = props;
-
+    
     return (
         <Fade>
             <div className="container">
-                <div className="row justifi-content-center align-items-center">
+                <div className="row justify-content-center align-items-center">
                     <div className="col-5 border-right py-5" style={{paddingRight: 80}}>
                         <Fade delay={300}>
                             <div className="card">
@@ -21,7 +20,7 @@ export default function BookingInformation(props) {
                                     alt={ItemDetails.name} 
                                     className="img-cover"/>
                                 </figure>
-                                <div className="row align-items center">
+                                <div className="row align-items-center">
                                     <div className="col">
                                         <div className="meta-wrapper">
                                             <h5>
