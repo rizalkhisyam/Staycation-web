@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
+
 import Header from 'parts/Header';
 import PageDetailTitle from 'parts/PageDetailTitle'
 import FeaturedImage from 'parts/FeaturedImage'
@@ -36,12 +39,16 @@ export default class DetailsPage extends Component {
                 <FeaturedImage data={ItemDetails.imageUrls}></FeaturedImage>
                 <section className="container">
                 <div className="row">
+                    <Fade left delay={300}>
                     <div className="col-7 pr-5">
                         <PageDetailDescription data={ItemDetails}></PageDetailDescription>
                     </div>
+                    </Fade>
+                    <Zoom delay={300}>
                     <div className="col-5">
                         <BookingForm itemDetails={ItemDetails}></BookingForm>
                     </div>
+                    </Zoom>
                 </div>
                 </section>
 

@@ -19,8 +19,8 @@ export default function Text(props) {
 
     const [hasError, setHasError] = useState(null);
     let pattern = "";
-    if(type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(type === "tel") pattern = "[0-9]*";
+    if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (type === "phone") pattern = "[0-9]*";
 
     const onChange = (event) => {
         const target = {
@@ -32,12 +32,10 @@ export default function Text(props) {
 
         if(type === "email"){
             if(!pattern.test(event.target.value)) setHasError(errorResponse);
-            else{
-                setHasError(null);   
-            }
+            else setHasError(null);
         };
 
-        if (type === "tel"){
+        if (type === "phone"){
             if (event.target.validity.valid) props.onChange(target);
         } else {
             props.onChange(target);
@@ -56,12 +54,12 @@ export default function Text(props) {
                 )}
             
                 <input 
-                className={["form-control", inputClassName].join(" ")}
+                name={name}
                 type={type}
                 pattern={pattern}
-                name={name}
+                className={["form-control", inputClassName].join(" ")}
+                value={value}
                 placeholder={placeholder}
-                value = {value}
                 onChange={onChange}
                 >
                 </input>

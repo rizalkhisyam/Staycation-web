@@ -73,7 +73,7 @@ export default function BookingInformation(props) {
                             <InputText 
                             id="phone"
                             name="phone"
-                            type="tel"
+                            type="phone"
                             value={data.phone}
                             onChange={props.onChange}
                             />

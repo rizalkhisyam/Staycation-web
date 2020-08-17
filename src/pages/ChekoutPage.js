@@ -26,13 +26,22 @@ export default class ChekoutPage extends Component {
         }
     }
 
+    onChange = (event) => {
+        this.setState({
+            data: {
+            ...this.state.data,
+            [event.target.name]: event.target.value,
+            },
+        });
+    };
+
     componentDidMount(){
         window.scrollTo(0, 0);
     };
 
     render() {
 
-        const { data } = this.state
+        const { data } = this.state;
 
         const checkout = {
             duration: 3
@@ -167,7 +176,7 @@ export default class ChekoutPage extends Component {
                                     hasShadow
                                     href=""
                                     >
-
+                                        Back to Home
                                     </Button>
                                 </Controller>
                             )}
