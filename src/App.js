@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from 'pages/LandingPage';
 import DetailsPage from 'pages/DetailsPage';
 import Checkout from 'pages/ChekoutPage';
+import { ToastContainer } from 'react-toastify';
 
 import ExDate from 'pages/Example_Number';
 import ExNumber from 'pages/Example_Date';
 import ExBreadcrumb from 'pages/Example_breadcrumb';
 
 import "assets/scss/style.scss";
-
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <Route exact path="/properties/:id" component={DetailsPage}></Route>
         
       </Router>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

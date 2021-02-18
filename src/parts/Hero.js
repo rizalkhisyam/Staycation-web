@@ -51,7 +51,7 @@ export default function Hero(props) {
                         <div className="col-auto">
                             <img src={IconTreasure} style={{width:36, height:36, marginRight: 60}} alt={`${props.data.treasure} Treasure`}></img>
                             <h6 className="mt-3">
-                                {formatNumber(props.data.treasures)} <span className="text-gray-500 font-weight-light">treasures</span>
+                                {formatNumber(props.data.treasure)} <span className="text-gray-500 font-weight-light">treasures</span>
                             </h6>
                         </div>
                         <div className="col-auto">
